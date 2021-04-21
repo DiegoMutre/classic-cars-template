@@ -32,3 +32,48 @@ ul {
 }
 
 /* End of Common Styles */
+
+/* Navbar Styles */
+
+.navbar {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    left: -100%;
+    padding: 2rem;
+    position: fixed;
+    top: 0;
+    width: auto;
+    z-index: 10;
+}
+
+.navbar.change {
+    left: 0;
+}
+
+.navbar-link {
+    color: #777;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 2rem 0;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.navbar-link:hover {
+    color: #111;
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        padding: 4rem;
+    }
+
+    .navbar-link {
+        font-size: 1.5rem;
+    }
+}
+
+/* End of Navbar Styles */
