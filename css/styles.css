@@ -1,9 +1,9 @@
 /* Common Styles */
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
@@ -12,8 +12,8 @@ html {
 }
 
 body {
-    font-family: "Special Elite", cursive;
     background-color: #ccc;
+    font-family: "Special Elite", cursive;
     padding-right: 3rem;
 }
 
@@ -26,12 +26,55 @@ ul {
 }
 
 .center {
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 /* End of Common Styles */
+
+/* Menu Styles */
+.menu {
+    cursor: pointer;
+    flex-direction: column;
+    height: 3rem;
+    left: 2rem;
+    position: fixed;
+    top: 2rem;
+    transition: all 0.5s;
+    width: 3rem;
+    z-index: 10;
+}
+
+.menu.change {
+    left: 50vw;
+    transform: rotate(45deg);
+}
+
+@media (min-width: 768px) {
+    .menu.change {
+        left: 22vw;
+    }
+}
+
+.menu-line {
+    background-color: #fff;
+    box-shadow: 0.1rem 0.1rem 0.3rem #222;
+    height: 0.2rem;
+    margin: 0.3rem 0;
+    transition: transform 0.5s;
+    width: 100%;
+}
+
+.change .menu-line-1 {
+    transform: rotate(270deg) translateX(-0.4rem);
+}
+
+.change .menu-line-2 {
+    transform: rotate(360deg) translateY(-0.4rem);
+}
+
+/* End of Menu Styles */
 
 /* Navbar Styles */
 
@@ -40,11 +83,12 @@ ul {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    left: -100%;
+    left: -50vw;
     padding: 2rem;
     position: fixed;
     top: 0;
-    width: auto;
+    transition: left 0.5s;
+    width: 45vw;
     z-index: 10;
 }
 
@@ -56,8 +100,8 @@ ul {
     color: #777;
     font-size: 1rem;
     font-weight: 600;
-    margin: 2rem 0;
     letter-spacing: 0.3rem;
+    margin: 2rem 0;
     text-transform: uppercase;
     transition: color 0.3s;
 }
@@ -69,6 +113,7 @@ ul {
 @media (min-width: 768px) {
     .navbar {
         padding: 4rem;
+        width: 20vw;
     }
 
     .navbar-link {
