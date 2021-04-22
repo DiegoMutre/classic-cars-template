@@ -14,7 +14,12 @@ html {
 body {
     background-color: #ccc;
     font-family: "Special Elite", cursive;
-    padding-right: 3rem;
+}
+
+@media (min-width: 768px) {
+    body {
+        padding-right: 3rem;
+    }
 }
 
 a {
@@ -139,19 +144,20 @@ section {
     padding: 5rem 0;
     position: relative;
     transform-origin: left;
-    transition: left 0.5s;
+    transition: left 0.5s, transform 0.5s;
     width: 100%;
 }
 
 @media (min-width: 768px) {
     section.change {
-        left: 45vw;
+        left: 20vw;
+        transform: rotateY(10deg);
     }
 }
 
 .section-heading {
     color: #fff;
-    font-size: 10rem;
+    font-size: 5rem;
     font-weight: bolder;
     letter-spacing: 1rem;
     margin-bottom: 10rem;
@@ -159,4 +165,30 @@ section {
     text-shadow: 0.3rem 0.3rem 0.5rem #555;
 }
 
+@media (min-width: 768px) {
+    .section-heading {
+        font-size: 10rem;
+    }
+}
+
 /* End of Common Section Styles */
+
+/* Section 1 Styles */
+
+.section-1 {
+    background: url("../images/bg-section1.jpg") center no-repeat;
+    background-size: cover;
+    flex-direction: column;
+}
+
+.section-1 .section-1-heading {
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    text-shadow: 1rem 1rem 1rem #000, 2rem 2rem 2rem #111, 3rem 3rem 3rem #222;
+}
+
+.section-1-img {
+    width: 70%;
+}
+
+/* End of Section 1 Styles */
