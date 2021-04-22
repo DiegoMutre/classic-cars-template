@@ -122,3 +122,41 @@ ul {
 }
 
 /* End of Navbar Styles */
+
+/* Common Section Styles */
+
+.wrapper {
+    perspective: 50rem;
+    width: 100%;
+}
+
+section {
+    background-color: #efefef;
+    box-shadow: 0.5rem 0.5rem 1rem #aaa;
+    height: 100vh;
+    left: 0;
+    margin-bottom: 3rem;
+    padding: 5rem 0;
+    position: relative;
+    transform-origin: left;
+    transition: left 0.5s;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    section.change {
+        left: 45vw;
+    }
+}
+
+.section-heading {
+    color: #fff;
+    font-size: 10rem;
+    font-weight: bolder;
+    letter-spacing: 1rem;
+    margin-bottom: 10rem;
+    text-align: center;
+    text-shadow: 0.3rem 0.3rem 0.5rem #555;
+}
+
+/* End of Common Section Styles */
