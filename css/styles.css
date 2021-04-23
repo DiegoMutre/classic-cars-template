@@ -192,3 +192,83 @@ section {
 }
 
 /* End of Section 1 Styles */
+
+/* Section 2 Styles */
+
+.section-2 {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: space-around;
+}
+
+.cards-wrapper {
+    flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+    .section-2 {
+        height: 100vh;
+    }
+    .cards-wrapper {
+        flex-wrap: nowrap;
+    }
+}
+
+.card {
+    background-color: #fff;
+    box-shadow: 0.6rem 0.6rem 0.6rem #bbb;
+    margin: 3rem;
+    padding: 1rem;
+    position: relative;
+    transition: box-shadow 0.5s;
+    width: 50rem;
+}
+
+.card:hover {
+    box-shadow: 0.8rem 0.8rem 0.8rem #bbb;
+}
+
+.car-name {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    text-transform: uppercase;
+    z-index: 10;
+}
+
+.card-img {
+    opacity: 0.8;
+    transition: opacity 0.5s;
+    width: 100%;
+}
+
+.card:hover .card-img {
+    opacity: 1;
+}
+
+.car-price {
+    color: #777;
+    font-size: 1.8rem;
+    margin: 0.5rem 0;
+}
+
+.card-btn {
+    background-color: #fff;
+    border: none;
+    box-shadow: 0.1rem 0.1rem 0.5rem #bbb;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.7rem;
+    letter-spacing: 0.3rem;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    text-transform: uppercase;
+    text-shadow: 0.1rem 0.1rem 0.3rem #000;
+    width: 100%;
+}
+
+/* End of Section 2 Styles */
