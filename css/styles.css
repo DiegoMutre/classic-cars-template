@@ -272,3 +272,51 @@ section {
 }
 
 /* End of Section 2 Styles */
+
+/* Section 3 Styles */
+
+.section-3 {
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: space-around;
+}
+
+@media (min-width: 768px) {
+    .section-3 {
+        height: 100vh;
+    }
+}
+
+.videos-wrapper {
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .videos-wrapper {
+        flex-direction: row;
+    }
+}
+
+.video {
+    border-radius: 0.5rem;
+    box-shadow: 0.3rem 0.3rem 0.5rem #111;
+    margin: 2rem;
+    opacity: 0.8;
+    transition: all 0.5s;
+    width: 90%;
+}
+
+.video:hover {
+    box-shadow: 0.5rem 0.5rem 1rem #111;
+    opacity: 1;
+}
+
+@media (min-width: 768px) {
+    .video {
+        width: 25%;
+    }
+}
+
+/* End of Section 3 Styles */
