@@ -117,6 +117,7 @@ ul {
 
 @media (min-width: 768px) {
     .navbar {
+        left: -20vw;
         padding: 4rem;
         width: 20vw;
     }
