@@ -1,9 +1,9 @@
 /* Common Styles */
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
@@ -12,9 +12,14 @@ html {
 }
 
 body {
-    font-family: "Special Elite", cursive;
     background-color: #ccc;
-    padding-right: 3rem;
+    font-family: "Special Elite", cursive;
+}
+
+@media (min-width: 768px) {
+    body {
+        padding-right: 3rem;
+    }
 }
 
 a {
@@ -26,9 +31,470 @@ ul {
 }
 
 .center {
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 /* End of Common Styles */
+
+/* Menu Styles */
+.menu {
+    cursor: pointer;
+    flex-direction: column;
+    height: 3rem;
+    left: 2rem;
+    position: fixed;
+    top: 2rem;
+    transition: all 0.5s;
+    width: 3rem;
+    z-index: 10;
+}
+
+.menu.change {
+    left: 50vw;
+    transform: rotate(45deg);
+}
+
+@media (min-width: 768px) {
+    .menu.change {
+        left: 22vw;
+    }
+}
+
+.menu-line {
+    background-color: #fff;
+    box-shadow: 0.1rem 0.1rem 0.3rem #222;
+    height: 0.2rem;
+    margin: 0.3rem 0;
+    transition: transform 0.5s;
+    width: 100%;
+}
+
+.change .menu-line-1 {
+    transform: rotate(270deg) translateX(-0.4rem);
+}
+
+.change .menu-line-2 {
+    transform: rotate(360deg) translateY(-0.4rem);
+}
+
+/* End of Menu Styles */
+
+/* Navbar Styles */
+
+.navbar {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    left: -50vw;
+    padding: 2rem;
+    position: fixed;
+    top: 0;
+    transition: left 0.5s;
+    width: 45vw;
+    z-index: 10;
+}
+
+.navbar.change {
+    left: 0;
+}
+
+.navbar-link {
+    color: #777;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.3rem;
+    margin: 2rem 0;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.navbar-link:hover {
+    color: #111;
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        left: -20vw;
+        padding: 4rem;
+        width: 20vw;
+    }
+
+    .navbar-link {
+        font-size: 1.5rem;
+    }
+}
+
+/* End of Navbar Styles */
+
+/* Common Section Styles */
+
+.wrapper {
+    perspective: 50rem;
+    width: 100%;
+}
+
+section {
+    background-color: #efefef;
+    box-shadow: 0.5rem 0.5rem 1rem #aaa;
+    height: 100vh;
+    left: 0;
+    margin-bottom: 3rem;
+    padding: 5rem 0;
+    position: relative;
+    transform-origin: left;
+    transition: left 0.5s, transform 0.5s;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    section.change {
+        left: 20vw;
+        transform: rotateY(10deg);
+    }
+}
+
+.section-heading {
+    color: #fff;
+    font-size: 5rem;
+    font-weight: bolder;
+    letter-spacing: 1rem;
+    margin-bottom: 10rem;
+    text-align: center;
+    text-shadow: 0.3rem 0.3rem 0.5rem #555;
+}
+
+@media (min-width: 768px) {
+    .section-heading {
+        font-size: 10rem;
+    }
+}
+
+/* End of Common Section Styles */
+
+/* Section 1 Styles */
+
+.section-1 {
+    background: url("../images/bg-section1.jpg") center no-repeat;
+    background-size: cover;
+    flex-direction: column;
+}
+
+.section-1 .section-1-heading {
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    text-shadow: 1rem 1rem 1rem #000, 2rem 2rem 2rem #111, 3rem 3rem 3rem #222;
+}
+
+.section-1-img {
+    width: 70%;
+}
+
+/* End of Section 1 Styles */
+
+/* Section 2 Styles */
+
+.section-2 {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: space-around;
+}
+
+.cards-wrapper {
+    flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+    .section-2 {
+        height: 100vh;
+    }
+    .cards-wrapper {
+        flex-wrap: nowrap;
+    }
+}
+
+.card {
+    background-color: #fff;
+    box-shadow: 0.6rem 0.6rem 0.6rem #bbb;
+    margin: 3rem;
+    padding: 1rem;
+    position: relative;
+    transition: box-shadow 0.5s;
+    width: 50rem;
+}
+
+.card:hover {
+    box-shadow: 0.8rem 0.8rem 0.8rem #bbb;
+}
+
+.car-name {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    text-transform: uppercase;
+    z-index: 10;
+}
+
+.card-img {
+    opacity: 0.8;
+    transition: opacity 0.5s;
+    width: 100%;
+}
+
+.card:hover .card-img {
+    opacity: 1;
+}
+
+.car-price {
+    color: #777;
+    font-size: 1.8rem;
+    margin: 0.5rem 0;
+}
+
+.card-btn {
+    background-color: #fff;
+    border: none;
+    box-shadow: 0.1rem 0.1rem 0.5rem #bbb;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.7rem;
+    letter-spacing: 0.3rem;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    text-transform: uppercase;
+    text-shadow: 0.1rem 0.1rem 0.3rem #000;
+    width: 100%;
+}
+
+/* End of Section 2 Styles */
+
+/* Section 3 Styles */
+
+.section-3 {
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: space-around;
+}
+
+@media (min-width: 768px) {
+    .section-3 {
+        height: 100vh;
+    }
+}
+
+.videos-wrapper {
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .videos-wrapper {
+        flex-direction: row;
+    }
+}
+
+.video {
+    border-radius: 0.5rem;
+    box-shadow: 0.3rem 0.3rem 0.5rem #111;
+    margin: 2rem;
+    opacity: 0.8;
+    transition: all 0.5s;
+    width: 90%;
+}
+
+.video:hover {
+    box-shadow: 0.5rem 0.5rem 1rem #111;
+    opacity: 1;
+}
+
+@media (min-width: 768px) {
+    .video {
+        width: 25%;
+    }
+}
+
+/* End of Section 3 Styles */
+
+/* Section 4 Styles */
+
+.section-4 {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+    .section-4 {
+        height: 100vh;
+    }
+}
+
+.gallery {
+    margin: 10rem 0;
+    perspective: 10rem;
+}
+
+.gallery-shelf {
+    background-color: rgba(38, 126, 199, 0.8);
+    box-shadow: 1rem 1rem 5rem #444;
+    height: 2rem;
+    margin: auto;
+    position: relative;
+    width: 90%;
+}
+
+@media (min-width: 768px) {
+    .gallery-shelf {
+        height: 3rem;
+        width: 80%;
+    }
+}
+
+.gallery-shelf::before {
+    background-color: rgba(34, 152, 248, 0.7);
+    content: "";
+    height: 10rem;
+    position: absolute;
+    top: -10rem;
+    transform: rotateX(20deg);
+    transform-origin: bottom;
+    width: 100%;
+}
+
+.gallery img {
+    bottom: 6rem;
+    border-radius: 0.5rem;
+    box-shadow: 0.2rem -0.2rem 0.5rem #888;
+    position: absolute;
+    transform: translateX(-50%) rotateX(0.5deg);
+    transform-origin: bottom;
+    transition: all 0.3s;
+    width: 20%;
+}
+
+@media (min-width: 768px) {
+    .gallery img {
+        width: 15%;
+    }
+}
+
+.gallery img:hover {
+    box-shadow: 0 0.2rem 0.3rem #888;
+    transform: translateX(-50%) rotateX(0);
+}
+
+.gallery-img-1 {
+    left: 50%;
+}
+
+.gallery-img-2 {
+    left: 20%;
+}
+
+.gallery-img-3 {
+    left: 80%;
+}
+
+@media (min-width: 768px) {
+    .gallery-img-2 {
+        left: 30%;
+    }
+
+    .gallery-img-3 {
+        left: 70%;
+    }
+}
+
+/* End of Section 4 Styles */
+
+/* Section 5 Styles */
+
+.section-5 {
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+        url("../images/bg-section5.jpg") center no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: space-around;
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .section-5 {
+        height: 100vh;
+    }
+}
+
+.contact-form {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2rem solid rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    height: 45rem;
+    justify-content: center;
+    padding: 5rem;
+    width: 25rem;
+}
+
+@media (min-width: 375px) {
+    .contact-form {
+        width: 30rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .contact-form {
+        width: 60rem;
+    }
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: transparent;
+    border: 0.1rem solid #fff;
+    color: #fff;
+    flex-shrink: 0;
+    font-size: 1.5rem;
+    height: 4rem;
+    letter-spacing: 0.1rem;
+    margin: 2rem 0;
+    padding: 0.5rem;
+    transition: background-color 0.5s;
+    width: 100%;
+}
+
+.contact-form textarea {
+    max-width: 100%;
+    min-height: 8rem;
+}
+
+.form-input:focus {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-form .form-btn {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #444;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.3rem;
+}
+
+.copyright {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 300;
+    margin-top: 2rem;
+    text-align: center;
+}
+/* End of Section 5 Styles */
